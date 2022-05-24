@@ -1,0 +1,39 @@
+.main_table__tableBrief {
+    width: 50%;
+    margin: 30px;
+    text-align: center;
+    border: 2px solid #3a1c65;
+}
+.main_table__tableBrief td{
+    border: 2px solid #3a1c65;
+}
+.main_table__tableBrief tr:hover{
+    background: #34173a;
+    color: #fff;
+    cursor: pointer;
+}
+.tableBrief_title tr:hover {
+    background: #1b0b1e;
+    color: #fff;
+    cursor: none;
+}
+.tableBrief_title tr{
+    background: #1b0b1e;
+    color: #fff;
+}
+.main_table__tableExtended {
+    width: 80%;
+    margin: 30px;
+    text-align: center;
+    border: 2px solid #3a1c65;
+}
+.main_table__tableExtended tr {
+    border: 2px solid #3a1c65;
+}
+.tableExtended_checkbox:disabled {
+    width: 30px;
+    height: 30px;
+    background: #fefefe;
+    color: #1b0b1e;
+    border: 1px solid #d4d4d5;
+}
