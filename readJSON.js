@@ -16,8 +16,7 @@ var idHuman;
 const tbody = document.querySelector('#tableBrief tbody');
 tbody.addEventListener('click', function (e) {
     const cell = e.target.closest('td');
-    if (!cell) { return; } // Quit, not clicked on a cell
-    //const row = cell.parentElement;
+    if (!cell) { return; }
     row = e.target.closest('tr');
     idHuman = myJSON[row.rowIndex - 1].id;
     console.log(cell.innerHTML, row.rowIndex, cell.cellIndex, idHuman);
@@ -30,10 +29,6 @@ tbody.addEventListener('click', function (e) {
     document.getElementById("type").innerHTML = extendedInfo.car.type;
     document.getElementById("color").bgColor = extendedInfo.car.color;
     document.getElementById("isConvertible").checked = extendedInfo.car.isConvertible;
-    //if (extendedInfo.car.isConvertible == true) {
-    //    document.getElementById("isConvertible").checked = 'checked';
-    //}
-    //document.getElementById("isConvertible").innerHTML = extendedInfo.car.isConvertible;
     document.getElementById("vin").innerHTML = extendedInfo.car.vin;
 });
 
