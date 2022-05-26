@@ -8,55 +8,53 @@
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/table.css">
     <link rel="stylesheet" href="styles/text.css">
-    <script src="https://yastatic.net/jquery/3.3.1/jquery.min.js"></script>
-    <script type="module" src="readJSON.js"></script>
+    <script defer src="https://yastatic.net/jquery/3.3.1/jquery.min.js"></script>
+    <script defer type="module" src="readJSON.js"></script>
 </head>
 <body>
     <main class="main">
-        <table class="main_table__tableBrief" id="tableBrief">
-            <thead class="tableBrief_title">
-                <tr>
-                    <th>Владелец</th>
-                    <th>Производитель</th>
-                    <th>Марка</th>
-                    <th>Год выпуска</th>
-                </tr>
-            </thead>
-            <tbody>
-                
-            </tbody>
-        </table>
+            <table class="main__table-Brief" id="tableBrief">
+                <thead class="table-Brief__title">
+                    <tr>
+                        <th>Владелец</th>
+                        <th>Производитель</th>
+                        <th>Марка</th>
+                        <th>Год выпуска</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>     
 
-        <text class="main_text">
+        <text class="main-text">
             Подробная информация:
         </text>
-
-        <table class="main_table__tableExtended" id="extendedTable">
-            <thead>
-                <tr>
-                    <th>Владелец</th>
-                    <th>Производитель</th>
-                    <th>Марка</th>
-                    <th>Год выпуска</th>
-                    <th>Тип кузова</th>
-                    <th>Цвет</th>
-                    <th>Кабриолет</th>
-                    <th>Номер кузова</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td id="person"></td>
-                    <td id="manufacturer"></td>
-                    <td id="model"></td>
-                    <td id="year"></td>
-                    <td id="type"></td>
-                    <td id="color" width="5px" height="5px"></td>
-                    <td ><input class="tableExtended_checkbox" id="isConvertible" type="checkbox"></td>
-                    <td id="vin"></td>
-                </tr>
-            </tbody>
-        </table>
+            <table class="main__table-Extended" id="extendedTable">
+                <thead>
+                    <tr>
+                        <th>Владелец</th>
+                        <th>Производитель</th>
+                        <th>Марка</th>
+                        <th>Год выпуска</th>
+                        <th>Тип кузова</th>
+                        <th>Цвет</th>
+                        <th>Кабриолет</th>
+                        <th>Номер кузова</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="person"></td>
+                        <td id="manufacturer"></td>
+                        <td id="model"></td>
+                        <td id="year"></td>
+                        <td id="type"></td>
+                        <td id="color" width="5px" height="5px"></td>
+                        <td><input class="table-Extended__checkbox" id="isConvertible" type="checkbox" disabled></td>
+                        <td id="vin"></td>
+                    </tr>
+                </tbody>
+            </table>        
     </main>
 </body>
 </html>

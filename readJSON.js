@@ -1,35 +1,34 @@
-import myJSON from '/JSONfiles/motorists.json' assert {type:'json'};
-console.log(myJSON);
 
-for (var i = 0; i < myJSON.length; i++) {
-    var tr;
-    tr = $('<tr/>');
-    tr.append("<td>" + myJSON[i].person.lastname + " " + myJSON[i].person.firstname + "</td>");
-    tr.append("<td>" + myJSON[i].car.manufacturer + "</td>");
-    tr.append("<td>" + myJSON[i].car.model + "</td>");
-    tr.append("<td>" + myJSON[i].car.year + "</td>");
+import myJSON from '/JSONfiles/motorists.json' assert { type: 'json' };
+
+$('#extendedTable').hide(0);
+$('.main-text').hide(0);
+
+myJSON.forEach(item => {
+    const tr = $('<tr/>');
+    tr.append("<td>" + item.person.lastname + " " + item.person.firstname + "</td>");
+    tr.append("<td>" + item.car.manufacturer + "</td>");
+    tr.append("<td>" + item.car.model + "</td>");
+    tr.append("<td>" + item.car.year + "</td>");
     $('#tableBrief').append(tr);
-}
+})
 
-var row;
-var idHuman;
-const tbody = document.querySelector('#tableBrief tbody');
-tbody.addEventListener('click', function (e) {
+$('#tableBrief tbody').click(function (e) {
+    let row;
+    let idHuman;
     const cell = e.target.closest('td');
     if (!cell) { return; }
     row = e.target.closest('tr');
     idHuman = myJSON[row.rowIndex - 1].id;
-    console.log(cell.innerHTML, row.rowIndex, cell.cellIndex, idHuman);
-    var extendedInfo = myJSON.find((item => item.id === idHuman))
-    console.log(extendedInfo);
-    document.getElementById("person").innerHTML = extendedInfo.person.lastname + " " + extendedInfo.person.firstname;
-    document.getElementById("manufacturer").innerHTML = extendedInfo.car.manufacturer;
-    document.getElementById("model").innerHTML = extendedInfo.car.model;
-    document.getElementById("year").innerHTML = extendedInfo.car.year;
-    document.getElementById("type").innerHTML = extendedInfo.car.type;
-    document.getElementById("color").bgColor = extendedInfo.car.color;
-    document.getElementById("isConvertible").checked = extendedInfo.car.isConvertible;
-    document.getElementById("vin").innerHTML = extendedInfo.car.vin;
+    const extendedInfo = myJSON.find(item => item.id === idHuman)
+    $('#person').text(extendedInfo.person.lastname + " " + extendedInfo.person.firstname);
+    $('#manufacturer').text(extendedInfo.car.manufacturer);
+    $('#model').text(extendedInfo.car.model);
+    $('#year').text(extendedInfo.car.year);
+    $('#type').text(extendedInfo.car.type);
+    $('#color').css('background-color', extendedInfo.car.color);
+    $('#isConvertible').prop('checked', extendedInfo.car.isConvertible);
+    $('#vin').text(extendedInfo.car.vin);
+    $('#extendedTable').show(0);
+    $('.main-text').show(0);
 });
-
-document.getElementById("isConvertible").disabled = true;
