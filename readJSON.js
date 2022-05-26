@@ -17,7 +17,7 @@ $('#tableBrief tbody').click(function (e) {
     let row;
     let idHuman;
     const cell = e.target.closest('td');
-    if (!cell) { return; }
+    if (!cell) return;
     row = e.target.closest('tr');
     idHuman = myJSON[row.rowIndex - 1].id;
     const extendedInfo = myJSON.find(item => item.id === idHuman)
