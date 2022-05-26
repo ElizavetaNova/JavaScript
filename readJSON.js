@@ -6,21 +6,19 @@ $('.main-text').hide(0);
 
 myJSON.forEach(item => {
     const tr = $('<tr/>');
-    tr.append("<td>" + item.person.lastname + " " + item.person.firstname + "</td>");
-    tr.append("<td>" + item.car.manufacturer + "</td>");
-    tr.append("<td>" + item.car.model + "</td>");
-    tr.append("<td>" + item.car.year + "</td>");
+    tr.append(`<td>${item.person.lastname} ${item.person.firstname}</td>`);
+    tr.append(`<td>${item.car.manufacturer}</td>`);
+    tr.append(`<td>${item.car.model}</td>`);
+    tr.append(`<td>${item.car.year}</td>`);
     $('#tableBrief').append(tr);
 })
 
 $('#tableBrief tbody').click(function (e) {
-    let row;
-    let idHuman;
-    const cell = e.target.closest('td');
-    if (!cell) return;
-    row = e.target.closest('tr');
-    idHuman = myJSON[row.rowIndex - 1].id;
+    const target = e.target;
+    const row = target.closest('tr');
+    const idHuman = myJSON[row.rowIndex - 1].id;
     const extendedInfo = myJSON.find(item => item.id === idHuman)
+
     $('#person').text(extendedInfo.person.lastname + " " + extendedInfo.person.firstname);
     $('#manufacturer').text(extendedInfo.car.manufacturer);
     $('#model').text(extendedInfo.car.model);
