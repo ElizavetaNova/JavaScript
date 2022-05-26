@@ -1,36 +1,36 @@
-.main__table-Brief {
+.main__table-brief {
     width: 50%;
     margin: 30px;
     text-align: center;
     border: 2px solid #3a1c65;
 }
-.main__table-Brief td{
+.main__table-brief td{
     border: 2px solid #3a1c65;
 }
-.main__table-Brief tr:hover{
+.main__table-brief tr:hover{
     background: #34173a;
     color: #fff;
     cursor: pointer;
 }
-.table-Brief__title tr:hover {
+.table-brief__title tr:hover {
     background: #1b0b1e;
     color: #fff;
     cursor: none;
 }
-.table-Brief__title tr{
+.table-brief__title tr{
     background: #1b0b1e;
     color: #fff;
 }
-.main__table-Extended {
+.main__table-extended {
     width: 80%;
     margin: 30px;
     text-align: center;
     border: 2px solid #3a1c65;
 }
-.main__table-Extended tr {
+.main__table-extended tr {
     border: 2px solid #3a1c65;
 }
-.table-Extended__checkbox:disabled {
+.table-extended__checkbox:disabled {
     width: 30px;
     height: 30px;
     background: #fefefe;
