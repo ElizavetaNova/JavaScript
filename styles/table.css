@@ -21,13 +21,13 @@
     background: #1b0b1e;
     color: #fff;
 }
-.main__table-extended {
+.detail-block__table {
     width: 80%;
     margin: 30px;
     text-align: center;
     border: 2px solid #3a1c65;
 }
-.main__table-extended tr {
+.detail-block__table tr {
     border: 2px solid #3a1c65;
 }
 .table-extended__checkbox:disabled {

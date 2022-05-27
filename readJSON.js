@@ -1,8 +1,8 @@
 
 import myJSON from '/JSONfiles/motorists.json' assert { type: 'json' };
 
-$('#extendedTable').hide(0);
-$('.main-text').hide(0);
+
+$('.main-detail').hide(0);
 
 myJSON.forEach(item => {
     const tr = $('<tr/>');
@@ -28,5 +28,5 @@ $('#tableBrief tbody').click(function (e) {
     $('#isConvertible').prop('checked', extendedInfo.car.isConvertible);
     $('#vin').text(extendedInfo.car.vin);
     $('#extendedTable').show(0);
-    $('.main-text').show(0);
+    $('.main-detail').show(0);
 });
