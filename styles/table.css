@@ -1,0 +1,39 @@
+.main__table-brief {
+    width: 50%;
+    margin: 30px;
+    text-align: center;
+    border: 2px solid #3a1c65;
+}
+.main__table-brief td{
+    border: 2px solid #3a1c65;
+}
+.main__table-brief tr:hover{
+    background: #34173a;
+    color: #fff;
+    cursor: pointer;
+}
+.table-brief__title tr:hover {
+    background: #1b0b1e;
+    color: #fff;
+    cursor: none;
+}
+.table-brief__title tr{
+    background: #1b0b1e;
+    color: #fff;
+}
+.detail-block__table {
+    width: 80%;
+    margin: 30px;
+    text-align: center;
+    border: 2px solid #3a1c65;
+}
+.detail-block__table tr {
+    border: 2px solid #3a1c65;
+}
+.table-extended__checkbox:disabled {
+    width: 30px;
+    height: 30px;
+    background: #fefefe;
+    color: #1b0b1e;
+    border: 1px solid #d4d4d5;
+}
