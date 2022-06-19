@@ -22,10 +22,11 @@
                     <th>Год выпуска</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="tableBrief_tbody">
             </tbody>
         </table>
-        <div class="main__detail detail-block">
+        <div class="main__detail detail-block" 
+             id="main__detail">
             <text class="detail-block__text">
                 Подробная информация:
             </text>
@@ -42,19 +43,20 @@
                         <th>Номер кузова</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td id="person"></td>
-                        <td id="manufacturer"></td>
-                        <td id="model"></td>
-                        <td id="year"></td>
-                        <td id="type"></td>
-                        <td id="color" width="5px" height="5px"></td>
-                        <td><input class="table-extended__checkbox" id="isConvertible" type="checkbox" disabled></td>
-                        <td id="vin"></td>
-                    </tr>
+                <tbody id="extendedTable_tbody">
+                        <tr>
+                            <td id="person"></td>
+                            <td id="manufacturer"></td>
+                            <td id="model"></td>
+                            <td id="year"></td>
+                            <td id="type"></td>
+                            <td id="color" width="5px" height="5px"></td>
+                            <td><input class="table-extended__checkbox" id="isConvertible" type="checkbox" disabled></td>
+                            <td id="vin"></td>
+                        </tr>
                 </tbody>
             </table>
+            <button class="detail-block__delete" id="delete-btn">Удалить запись</button>
         </div>
         
     </main>
