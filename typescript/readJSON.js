@@ -29,7 +29,7 @@ tableBrieftbody.addEventListener('click', function (event) {
     hiddenBlock.hidden = false;
 });
 buttonDelete.addEventListener('click', function (event) {
-    var numberOfData = data.findIndex(function (item) { return item.id === idHuman; });
+    var numberOfData = data.findIndex(function (driver) { return driver.id === idHuman; });
     tableBrieftbody.deleteRow(numberOfData);
     data.splice(numberOfData, 1);
     hiddenBlock.hidden = true;

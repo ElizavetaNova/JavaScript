@@ -57,7 +57,7 @@ tableBrieftbody.addEventListener('click', (event: Event) => {
     hiddenBlock.hidden = false;   
 });
 buttonDelete.addEventListener('click', (event: Event) => {
-    const numberOfData: number = data.findIndex((item: dataType) => item.id === idHuman);
+    const numberOfData: number = data.findIndex((driver: dataType) => driver.id === idHuman);
     tableBrieftbody.deleteRow(numberOfData);
     data.splice(numberOfData, 1);
     hiddenBlock.hidden = true;
