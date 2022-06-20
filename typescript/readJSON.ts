@@ -14,52 +14,57 @@ const vinCell: HTMLTableCellElement = <HTMLTableCellElement>document.getElementB
 
 const buttonDelete: HTMLButtonElement = <HTMLButtonElement>document.getElementById('delete-btn');
 
-const hidenBlock: HTMLElement = <HTMLElement>document.getElementById("main__detail");
-hidenBlock.hidden = true;
+const hiddenBlock: HTMLElement = <HTMLElement>document.getElementById("main__detail");
+hiddenBlock.hidden = true;
+
+interface dataType {
+    id: string;
+    person: {
+        firstname: string;
+        lastname: string;
+    };
+    car: {
+        manufacturer: string;
+        model: string;
+        type: string;
+        vin: string;
+        year: number;
+        color: string;
+        isConvertible: boolean;
+    };
+}
 
 let idHuman: string;
 
 createTableBrief();
 
 tableBrieftbody.addEventListener('click', (event: Event) => {
-    const target: HTMLTableRowElement = <HTMLTableRowElement>event.target;
-    let tar = event?.target as HTMLElement;
+    const tableRowTarget: HTMLTableRowElement = <HTMLTableRowElement>event.target;
     
-    const row: HTMLTableRowElement = <HTMLTableRowElement>target.closest('tr');
+    const row: HTMLTableRowElement = <HTMLTableRowElement>tableRowTarget.closest('tr');
     idHuman = data[row.rowIndex - 1].id;
-    const extendedInfo = data.filter(item => item.id === idHuman)
-    console.log(extendedInfo);
-    extendedInfo.forEach(item => {
-        personCell.textContent = item.person.firstname + " " + item.person.lastname;
-        manufacturerCell.textContent = item.car.manufacturer;
-        modelCell.textContent = item.car.model;
-        yearCell.textContent = item.car.year.toString();
-        typeCell.textContent = item.car.model;
-        colorCell.bgColor = item.car.color;
-        isConvertibleCell.checked = item.car.isConvertible;
-        vinCell.textContent = item.car.vin;
-    })
-    hidenBlock.hidden = false;   
-});
-buttonDelete.addEventListener('click', event => {
-    let numberOfdata = 0;
-    data.forEach(item => {
-        if (item.id == idHuman) {
-            numberOfdata = data.indexOf(item);
-        }
-    });
+    const extendedInfo: dataType = <dataType>data.find((driver: dataType) => driver.id === idHuman)
 
-    data.splice(numberOfdata, 1);
-    hidenBlock.hidden = true;
-    const tr: HTMLTableRowElement = <HTMLTableRowElement>document.createElement('tr');
-    while (tableBrieftbody.rows[0]) {
-        tableBrieftbody.deleteRow(0);
-    }
-    createTableBrief();
+    personCell.textContent = extendedInfo.person.firstname + " " + extendedInfo.person.lastname;
+    manufacturerCell.textContent = extendedInfo.car.manufacturer;
+    modelCell.textContent = extendedInfo.car.model;
+    yearCell.textContent = extendedInfo.car.year.toString();
+    typeCell.textContent = extendedInfo.car.model;
+    colorCell.bgColor = extendedInfo.car.color;
+    isConvertibleCell.checked = extendedInfo.car.isConvertible;
+    vinCell.textContent = extendedInfo.car.vin;
+
+    hiddenBlock.hidden = false;   
+});
+buttonDelete.addEventListener('click', (event: Event) => {
+    const numberOfData: number = data.findIndex((item: dataType) => item.id === idHuman);
+    tableBrieftbody.deleteRow(numberOfData);
+    data.splice(numberOfData, 1);
+    hiddenBlock.hidden = true;
 });
 
 function createTableBrief(): void {
-    data.forEach(member => {
+    data.forEach((member: dataType) => {
         const tr: HTMLTableRowElement = document.createElement('tr');
         tr.innerHTML = `<td>${member.person.firstname} ${member.person.lastname}</td>
                       <td>${member.car.manufacturer}</td>
@@ -68,4 +73,3 @@ function createTableBrief(): void {
         tableBrieftbody.appendChild(tr);
     });
 }
-

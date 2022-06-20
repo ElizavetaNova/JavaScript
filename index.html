@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/table.css">
     <link rel="stylesheet" href="styles/text.css">
-    <script>var exports = {};</script>
-    <script type="module" src="/js/typescript/readJSON.js"></script>
+    <link rel="stylesheet" href="styles/delete.css">
+    <script type="module" src="/typescript/readJSON.js"></script>
 </head>
 <body>
     <main class="main">
@@ -44,16 +44,16 @@
                     </tr>
                 </thead>
                 <tbody id="extendedTable_tbody">
-                        <tr>
-                            <td id="person"></td>
-                            <td id="manufacturer"></td>
-                            <td id="model"></td>
-                            <td id="year"></td>
-                            <td id="type"></td>
-                            <td id="color" width="5px" height="5px"></td>
-                            <td><input class="table-extended__checkbox" id="isConvertible" type="checkbox" disabled></td>
-                            <td id="vin"></td>
-                        </tr>
+                    <tr>
+                        <td id="person"></td>
+                        <td id="manufacturer"></td>
+                        <td id="model"></td>
+                        <td id="year"></td>
+                        <td id="type"></td>
+                        <td id="color" width="5px" height="5px"></td>
+                        <td><input class="table-extended__checkbox" id="isConvertible" type="checkbox" disabled></td>
+                        <td id="vin"></td>
+                    </tr>
                 </tbody>
             </table>
             <button class="detail-block__delete" id="delete-btn">Удалить запись</button>

@@ -9,43 +9,30 @@ var colorCell = document.getElementById("color");
 var isConvertibleCell = document.getElementById("isConvertible");
 var vinCell = document.getElementById("vin");
 var buttonDelete = document.getElementById('delete-btn');
-var hidenBlock = document.getElementById("main__detail");
-hidenBlock.hidden = true;
+var hiddenBlock = document.getElementById("main__detail");
+hiddenBlock.hidden = true;
 var idHuman;
 createTableBrief();
 tableBrieftbody.addEventListener('click', function (event) {
-    var target = event.target;
-    var tar = event === null || event === void 0 ? void 0 : event.target;
-    var row = target.closest('tr');
+    var tableRowTarget = event.target;
+    var row = tableRowTarget.closest('tr');
     idHuman = data[row.rowIndex - 1].id;
-    var extendedInfo = data.filter(function (item) { return item.id === idHuman; });
-    console.log(extendedInfo);
-    extendedInfo.forEach(function (item) {
-        personCell.textContent = item.person.firstname + " " + item.person.lastname;
-        manufacturerCell.textContent = item.car.manufacturer;
-        modelCell.textContent = item.car.model;
-        yearCell.textContent = item.car.year.toString();
-        typeCell.textContent = item.car.model;
-        colorCell.bgColor = item.car.color;
-        isConvertibleCell.checked = item.car.isConvertible;
-        vinCell.textContent = item.car.vin;
-    });
-    hidenBlock.hidden = false;
+    var extendedInfo = data.find(function (driver) { return driver.id === idHuman; });
+    personCell.textContent = extendedInfo.person.firstname + " " + extendedInfo.person.lastname;
+    manufacturerCell.textContent = extendedInfo.car.manufacturer;
+    modelCell.textContent = extendedInfo.car.model;
+    yearCell.textContent = extendedInfo.car.year.toString();
+    typeCell.textContent = extendedInfo.car.model;
+    colorCell.bgColor = extendedInfo.car.color;
+    isConvertibleCell.checked = extendedInfo.car.isConvertible;
+    vinCell.textContent = extendedInfo.car.vin;
+    hiddenBlock.hidden = false;
 });
 buttonDelete.addEventListener('click', function (event) {
-    var numberOfdata = 0;
-    data.forEach(function (item) {
-        if (item.id == idHuman) {
-            numberOfdata = data.indexOf(item);
-        }
-    });
-    data.splice(numberOfdata, 1);
-    hidenBlock.hidden = true;
-    var tr = document.createElement('tr');
-    while (tableBrieftbody.rows[0]) {
-        tableBrieftbody.deleteRow(0);
-    }
-    createTableBrief();
+    var numberOfData = data.findIndex(function (item) { return item.id === idHuman; });
+    tableBrieftbody.deleteRow(numberOfData);
+    data.splice(numberOfData, 1);
+    hiddenBlock.hidden = true;
 });
 function createTableBrief() {
     data.forEach(function (member) {
