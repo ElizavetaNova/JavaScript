@@ -94,5 +94,6 @@
   },
   "files": [
     "typescript/readJSON.ts"
-  ]
+  ],
+  "exclude": ["JSONfiles/motorists.json"]
 }

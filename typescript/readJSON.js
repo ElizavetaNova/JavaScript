@@ -23,7 +23,7 @@ tableBrieftbody.addEventListener('click', function (event) {
     modelCell.textContent = extendedInfo.car.model;
     yearCell.textContent = extendedInfo.car.year.toString();
     typeCell.textContent = extendedInfo.car.model;
-    colorCell.bgColor = extendedInfo.car.color;
+    colorCell.style.background = extendedInfo.car.color;
     isConvertibleCell.checked = extendedInfo.car.isConvertible;
     vinCell.textContent = extendedInfo.car.vin;
     hiddenBlock.hidden = false;

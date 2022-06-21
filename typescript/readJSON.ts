@@ -17,7 +17,7 @@ const buttonDelete: HTMLButtonElement = <HTMLButtonElement>document.getElementBy
 const hiddenBlock: HTMLElement = <HTMLElement>document.getElementById("main__detail");
 hiddenBlock.hidden = true;
 
-interface dataType {
+interface DataType {
     id: string;
     person: {
         firstname: string;
@@ -43,28 +43,28 @@ tableBrieftbody.addEventListener('click', (event: Event) => {
     
     const row: HTMLTableRowElement = <HTMLTableRowElement>tableRowTarget.closest('tr');
     idHuman = data[row.rowIndex - 1].id;
-    const extendedInfo: dataType = <dataType>data.find((driver: dataType) => driver.id === idHuman)
+    const extendedInfo: DataType = <DataType>data.find((driver: DataType) => driver.id === idHuman)
 
     personCell.textContent = extendedInfo.person.firstname + " " + extendedInfo.person.lastname;
     manufacturerCell.textContent = extendedInfo.car.manufacturer;
     modelCell.textContent = extendedInfo.car.model;
     yearCell.textContent = extendedInfo.car.year.toString();
     typeCell.textContent = extendedInfo.car.model;
-    colorCell.bgColor = extendedInfo.car.color;
+    colorCell.style.background = extendedInfo.car.color;
     isConvertibleCell.checked = extendedInfo.car.isConvertible;
     vinCell.textContent = extendedInfo.car.vin;
 
     hiddenBlock.hidden = false;   
 });
 buttonDelete.addEventListener('click', (event: Event) => {
-    const numberOfData: number = data.findIndex((driver: dataType) => driver.id === idHuman);
+    const numberOfData: number = data.findIndex((driver: DataType) => driver.id === idHuman);
     tableBrieftbody.deleteRow(numberOfData);
     data.splice(numberOfData, 1);
     hiddenBlock.hidden = true;
 });
 
 function createTableBrief(): void {
-    data.forEach((member: dataType) => {
+    data.forEach((member: DataType) => {
         const tr: HTMLTableRowElement = document.createElement('tr');
         tr.innerHTML = `<td>${member.person.firstname} ${member.person.lastname}</td>
                       <td>${member.car.manufacturer}</td>
