@@ -1,8 +1,8 @@
 .main__table-brief {
     width: 50%;
-    margin: 30px;
     text-align: center;
     border: 2px solid #3a1c65;
+    margin-bottom: 30px;
 }
 .main__table-brief td{
     border: 2px solid #3a1c65;
@@ -23,9 +23,9 @@
 }
 .detail-block__table {
     width: 80%;
-    margin: 30px;
     text-align: center;
     border: 2px solid #3a1c65;
+    margin: 10px;
 }
 .detail-block__table tr {
     border: 2px solid #3a1c65;

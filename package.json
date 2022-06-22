@@ -1,0 +1,23 @@
+{
+  "name": "hw2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "readJSON.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+      "tsc": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ElizavetaNova/JavaScript.git"
+  },
+  "author": "Fakhrutdinova Elizaveta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ElizavetaNova/JavaScript/issues"
+  },
+  "homepage": "https://github.com/ElizavetaNova/JavaScript#readme",
+  "devDependencies": {
+    "typescript": "^4.7.3"
+  }
+}
