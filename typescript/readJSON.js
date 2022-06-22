@@ -28,7 +28,7 @@ tableBrieftbody.addEventListener('click', function (event) {
     vinCell.textContent = extendedInfo.car.vin;
     hiddenBlock.hidden = false;
 });
-buttonDelete.addEventListener('click', function (event) {
+buttonDelete.addEventListener('click', function () {
     var numberOfData = data.findIndex(function (driver) { return driver.id === idHuman; });
     tableBrieftbody.deleteRow(numberOfData);
     data.splice(numberOfData, 1);
